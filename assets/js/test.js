@@ -76,7 +76,6 @@ var displayWeather = function(weatherInfo) {
 
         // this API is missing a lot of data - see documentation. It often does not have valid readings from.
         // validity checks are listed as false in response. can not get weather data as outlined in documentation.
-        
         var solNum = document.createElement("p");
         solNum.textContent = weatherInfo[i].sol_key;
         console.log(solNum);
