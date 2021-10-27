@@ -2,6 +2,7 @@
 var apiKey = "fjvfRJ8cEyas9WxKMPUG1LSDE9gdd3Bf4XWRrIe2";
 
 var photoSectionEl = document.querySelector("#photo-section");
+var weatherSectionEl = document.querySelector("#weather-section");
 
 // current date from moment cdn
 var todaysDate = moment().format("YYYY-MM-DD");
@@ -49,7 +50,60 @@ var displayInfo = function(photoInfo) {
 
 }
 
+// NASA mars weather API
+var getWeather = function () {
+
+    // latest photos query by earth date
+    var apiUrl = "https://api.nasa.gov/insight_weather/?api_key=" + apiKey + "&feedtype=json&ver=1.0";
+
+    fetch(apiUrl)
+        .then(function(response) {
+            console.log(response);
+            if (response.ok) {
+                response.json().then(function(weatherInfo) {
+                    console.log(weatherInfo);
+
+                    displayWeather(weatherInfo);
+
+                })
+            }
+        })
+}
+
+var displayWeather = function(weatherInfo) {
+
+    for (var i = 0; i < weatherInfo.length; i++) {
+
+        // this API is missing a lot of data - see documentation. It often does not have valid readings from.
+        // validity checks are listed as false in response. can not get weather data as outlined in documentation.
+        
+        var solNum = document.createElement("p");
+        solNum.textContent = weatherInfo[i].sol_key;
+        console.log(solNum);
+
+        var temp = document.createElement("p");
+        temp.textContent = weatherInfo[i].AT.av;
+        console.log(temp);
+
+        var pressure = document.createElement("p");
+        pressure.textContent = weatherInfo[i].PRE.av;
+        console.log(pressure);
+
+        var wind = document.createElement("p");
+        wind.textContent = weatherInfo[i].HWS.av;
+        console.log(wind);
+
+        weatherSectionEl.appendChild(solNum);
+        weatherSectionEl.appendChild(temp);
+        weatherSectionEl.appendChild(pressure);
+        weatherSectionEl.appendChild(wind);
+
+    }
+}
+
+
 getPhotos();
+getWeather();
 
 
 
