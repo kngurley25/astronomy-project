@@ -6,6 +6,7 @@ var photoSectionEl = document.querySelector("#photo-section");
 var weatherSectionEl = document.querySelector("#weather-section");
 var earthSectionEl = document.querySelector("#earth-section");
 var peopleSectionEl = document.querySelector("#people-section");
+var horoscopeEl = document.querySelector("#horoscope-section");
 
 // current date from moment cdn
 var todaysDate = moment().format("YYYY-MM-DD");
@@ -185,10 +186,29 @@ var displayNames = function(peopleData) {
 
 }
 
+// Star Wars API data
+var getStarship = function () {
+
+    var apiUrl = "https://swapi.dev/api/starships/";
+
+    fetch(apiUrl)
+        .then(function(response) {
+            console.log(response);
+            if (response.ok) {
+                response.json().then(function(signInfo) {
+                    console.log(signInfo);
+
+                    // displayNames(signInfo);
+
+                })
+            }
+        })
+}
+
+
+
 getPhotos();
 getWeather();
 getEarthPhoto();
 getSpacePeople();
-
-
-
+getStarship();
