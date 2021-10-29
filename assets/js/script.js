@@ -1,10 +1,36 @@
 //HTML elements
 var starshipEl = document.querySelector("#starship-info");
 
-// Star Wars API call
-var getStarship = function () {
+var shipButtonEl = document.querySelector(".ship-btn");
 
-    var apiUrl = "https://swapi.dev/api/starships/";
+// ship array
+var shipObject = {
+    3: "star-destroyer", // starships/3/
+    9: "death-star", // starships/9/
+    10: "millennium-falcon", // starships/10/
+    11: "y-wing", // starships/11/
+    12: "x-wing", // starships/12/
+    17: "rebel-transport" // starships/17/
+}
+console.log(Object.values(shipObject));
+console.log(Object.keys(shipObject));
+
+var verifyStarship = function (event) {
+    
+    var shipSelect = event.target.getAttribute("id");
+    for (var i = 0; i < Object.keys(shipObject).length; i ++)
+        if (shipSelect === shipObject[i]) {
+            var shipNum = [i];
+        }
+
+    getStarship(shipNum);
+
+}
+
+// Star Wars API call
+var getStarship = function (shipNum) {
+
+    var apiUrl = "https://swapi.dev/api/starships/" + shipNum + "/";
 
     fetch(apiUrl)
         .then(function(response) {
@@ -26,26 +52,28 @@ var starshipInfo = function(shipData) {
     // clear old content
     starshipEl.textContent = "";
 
+    // starship data to display
+    
     var shipName = document.createElement("h3");
-    shipName.textContent = "Starship Name: " + shipData.results[1].name;
+    shipName.textContent = "Starship Name: " + shipData.name;
 
     var shipModel = document.createElement("p");
-    shipModel.textContent = "Model: " + shipData.results[1].model;
+    shipModel.textContent = "Model: " + shipData.model;
 
     var shipManufacturer = document.createElement("p");
-    shipManufacturer.textContent = "Manufacturer: " + shipData.results[1].manufacturer;
+    shipManufacturer.textContent = "Manufacturer: " + shipData.manufacturer;
 
     var shipHyperdrive = document.createElement("p");
-    shipHyperdrive.textContent = "Hyperdrive Rating: " + shipData.results[1].hyperdrive_rating;
+    shipHyperdrive.textContent = "Hyperdrive Rating: " + shipData.hyperdrive_rating;
 
     var shipCrew = document.createElement("p");
-    shipCrew.textContent = "Crew: " + shipData.results[1].crew;
+    shipCrew.textContent = "Crew: " + shipData.crew;
 
     var shipLength = document.createElement("p");
-    shipLength.textContent = "Length: " + shipData.results[1].length + " meters";
+    shipLength.textContent = "Length: " + shipData.length + " meters";
 
     var shipCargo = document.createElement("p");
-    shipCargo.textContent = "Cargo capacity: " + shipData.results[1].cargo_capacity + " kilograms";
+    shipCargo.textContent = "Cargo capacity: " + shipData.cargo_capacity + " kilograms";
 
     starshipEl.appendChild(shipName);
     starshipEl.appendChild(shipModel);
@@ -57,4 +85,5 @@ var starshipInfo = function(shipData) {
 
 }
 
-getStarship();
+// event listener to starship buttons
+shipButtonEl.addEventListener("click", verifyStarship);
