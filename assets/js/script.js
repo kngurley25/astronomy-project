@@ -1,7 +1,7 @@
 //HTML elements
 var starshipEl = document.querySelector("#starship-info");
 
-var shipButtonEl = document.querySelector(".ship-btn");
+var shipButtonEl = document.querySelector("#ship-buttons");
 
 // ship array
 var shipObject = {
@@ -14,14 +14,27 @@ var shipObject = {
 }
 console.log(Object.values(shipObject));
 console.log(Object.keys(shipObject));
+console.log(shipObject[3]);
 
 var verifyStarship = function (event) {
     
     var shipSelect = event.target.getAttribute("id");
-    for (var i = 0; i < Object.keys(shipObject).length; i ++)
-        if (shipSelect === shipObject[i]) {
-            var shipNum = [i];
-        }
+    console.log(event.target);
+    console.log(shipSelect);
+
+    if (shipSelect === shipObject[3]) {
+        var shipNum = 3;
+    } else if (shipSelect === shipObject[9]) {
+        var shipNum = 9;
+    } else if (shipSelect === shipObject[10]) {
+        var shipNum = 10;
+    } else if (shipSelect === shipObject[11]) {
+        var shipNum = 11;
+    } else if (shipSelect === shipObject[12]) {
+        var shipNum = 12;
+    } else if (shipSelect === shipObject[17]) {
+        var shipNum = 17;
+    }
 
     getStarship(shipNum);
 
