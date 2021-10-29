@@ -1,7 +1,11 @@
 //HTML elements
 var starshipEl = document.querySelector("#starship-info");
-
 var shipButtonEl = document.querySelector("#ship-buttons");
+
+var inputNameEl = document.querySelector("#name-input");
+var submitButtonEl = document.querySelector("#submit-btn");
+
+var nameAndStarshipEl = document.querySelector("#name-starship");
 
 // ship array
 var shipObject = {
@@ -12,15 +16,10 @@ var shipObject = {
     12: "x-wing", // starships/12/
     17: "rebel-transport" // starships/17/
 }
-console.log(Object.values(shipObject));
-console.log(Object.keys(shipObject));
-console.log(shipObject[3]);
 
 var verifyStarship = function (event) {
     
     var shipSelect = event.target.getAttribute("id");
-    console.log(event.target);
-    console.log(shipSelect);
 
     if (shipSelect === shipObject[3]) {
         var shipNum = 3;
@@ -47,7 +46,7 @@ var getStarship = function (shipNum) {
 
     fetch(apiUrl)
         .then(function(response) {
-            console.log(response);
+            // console.log(response);
             if (response.ok) {
                 response.json().then(function(starship) {
                     console.log(starship);
@@ -98,5 +97,40 @@ var starshipInfo = function(shipData) {
 
 }
 
+// function to capture name input form
+var formSubmitHandler = function(event) {
+    event.preventDefault();
+
+    var inputName = inputNameEl.value.trim();
+
+    if (inputName) {
+        displayData(inputName);
+    }
+}
+
+// function to display name and starship data to page
+var displayData = function(inputName, shipName) {
+
+    var displayName = document.createElement("p");
+    displayName.textContent = "Passenger Name: " + inputName;
+
+    var displayShipName = document.createElement("p");
+    displayShipName.textContent = "Selected Starship: " + shipName;
+
+    var launch = document.createElement("p");
+    launch.textContent = "Scheduled Launch: " + moment().add(7, 'days').format("dddd, MMMM Do YYYY, h:mm:ss a");
+    
+    var message = document.createElement("p");
+    message.textContent = "Good luck!";
+
+    nameAndStarshipEl.appendChild(displayName);
+    nameAndStarshipEl.appendChild(displayShipName);
+    nameAndStarshipEl.appendChild(launch);
+    nameAndStarshipEl.appendChild(message);
+}
+
 // event listener to starship buttons
 shipButtonEl.addEventListener("click", verifyStarship);
+submitButtonEl.addEventListener("click", formSubmitHandler);
+
+
