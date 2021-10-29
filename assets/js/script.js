@@ -122,7 +122,7 @@ var formSubmitHandler = function(event) {
 // function to display name and starship data to page
 var displayData = function(inputName, starShip) {
 
-    nameAndStarshipEl.textContent = "";
+    // nameAndStarshipEl.textContent = "";
 
     var displayName = document.createElement("p");
     displayName.textContent = "Passenger Name: " + inputName;
@@ -133,9 +133,10 @@ var displayData = function(inputName, starShip) {
     var launch = document.createElement("p");
     launch.textContent = "Scheduled Launch: " + moment().add(3, 'days').format("dddd, MMMM Do YYYY, h:mm:ss a");
 
-    nameAndStarshipEl.appendChild(displayName);
-    nameAndStarshipEl.appendChild(displayShipName);
-    nameAndStarshipEl.appendChild(launch);
+    nameAndStarshipEl.prepend(launch);
+    nameAndStarshipEl.prepend(displayShipName);
+    nameAndStarshipEl.prepend(displayName);
+
 }
 
 // local storage
