@@ -160,7 +160,7 @@ var loadSubmits = function() {
         pastTravelers.textContent = "Past Traveler: " + savedPassengers[i].split(",")[0] + " - " + savedPassengers[i].split(",")[1];
         nameAndStarshipEl.appendChild(pastTravelers);
 
-        pastSubmits.push(pastSubmits[i]);
+        pastSubmits.push(savedPassengers[i]);
     }
 
     localStorage.setItem("passengers", JSON.stringify(savedPassengers));
