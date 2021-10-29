@@ -4,7 +4,7 @@ var shipButtonEl = document.querySelector("#ship-buttons");
 
 var inputNameEl = document.querySelector("#name-input");
 var submitButtonEl = document.querySelector("#submit-btn");
-
+var shipDropdownEl = document.querySelector("#starship-dropdown");
 var nameAndStarshipEl = document.querySelector("#name-starship");
 
 // ship array
@@ -36,7 +36,6 @@ var verifyStarship = function (event) {
     }
 
     getStarship(shipNum);
-
 }
 
 // Star Wars API call
@@ -94,7 +93,6 @@ var starshipInfo = function(shipData) {
     starshipEl.appendChild(shipCrew);
     starshipEl.appendChild(shipLength);
     starshipEl.appendChild(shipCargo);
-
 }
 
 // function to capture name input form
@@ -115,7 +113,7 @@ var displayData = function(inputName, shipName) {
     displayName.textContent = "Passenger Name: " + inputName;
 
     var displayShipName = document.createElement("p");
-    displayShipName.textContent = "Selected Starship: " + shipName;
+    displayShipName.textContent = "Selected Starship: " + shipDropdownEl.options[shipDropdownEl.selectedIndex].text;
 
     var launch = document.createElement("p");
     launch.textContent = "Scheduled Launch: " + moment().add(7, 'days').format("dddd, MMMM Do YYYY, h:mm:ss a");
