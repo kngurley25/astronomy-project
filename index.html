@@ -35,7 +35,7 @@
             <h2>Your Ride to the Next Planet</h2>
             <div>
                 <div>
-                    <p>Select your starship:</p>
+                    <p>Click to see information on available starships:</p>
                 </div>
                 <div id="ship-buttons">
                     <button type="submit" class="button" id="star-destroyer">Star Destroyer</button>
@@ -49,12 +49,33 @@
             </div>
             <div>
                 <div>
-                    <p>Enter your name:</p>
+                    <p>Enter your name and select your starship:</p>
                 </div>
-                <div>
+                <div class="field">
                     <label class="label">Name</label>
-                    <input class="input" id="name-input" type="text" placeholder="e.g. Hans Solo">
-                    <button type="submit" class="button" id="submit-btn">Submit</button>
+                    <div>
+                        <input class="input" id="name-input" type="text" placeholder="e.g. Hans Solo"/>
+                    </div>  
+                </div>
+                <div class="field">
+                    <label class="label">Starship</label>
+                    <div class="control">
+                      <div class="select">
+                        <select>
+                          <option>Star Destroyer</option>
+                          <option>Death Star</option>
+                          <option>Millennium Falcon</option>
+                          <option>Y-Wing</option>
+                          <option>X-Wing</option>
+                          <option>Rebel Transport</option>
+                        </select>
+                      </div>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="control">
+                        <button type="submit" class="button" id="submit-btn">Submit</button>
+                    </div>
                 </div>
             </div>
             <div id="name-starship"></div>
