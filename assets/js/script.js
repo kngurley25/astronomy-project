@@ -1,5 +1,4 @@
 // Star Wars API
-
 var getStarship = function () {
 
     var apiUrl = "https://swapi.dev/api/starships/";
