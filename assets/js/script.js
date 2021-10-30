@@ -7,6 +7,12 @@ var submitButtonEl = document.querySelector("#submit-btn");
 var shipDropdownEl = document.querySelector("#starship-dropdown");
 var nameAndStarshipEl = document.querySelector("#name-starship");
 
+// mars rover HTML elements
+var cameraFhazBtn = document.getElementById("cameraFhaz");
+var cameraRhazBtn = document.getElementById("cameraRhaz");
+var cameraMastBtn = document.getElementById("cameraMast");
+var cameraPancamBtn = document.getElementById("cameraPancam");
+
 // ship array
 var shipObject = {
     3: "star-destroyer", // starships/3/
@@ -165,6 +171,13 @@ var loadSubmits = function() {
 
     localStorage.setItem("passengers", JSON.stringify(savedPassengers));
 }
+
+// event listener for mars rover buttons
+cameraFhazBtn.addEventListener("click", function() {console.log("test")});
+cameraRhazBtn.addEventListener("click", function() {console.log("test")});
+cameraMastBtn.addEventListener("click", function() {console.log("test")});
+cameraPancamBtn.addEventListener("click", function() {console.log("test")});
+
 
 // event listener to starship buttons
 shipButtonEl.addEventListener("click", verifyStarship);
