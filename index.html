@@ -21,24 +21,26 @@
     <main>
         <!-- TODO Grace section -->
         <section>
-            <h2>Explore the Landscape</h2>
+            <h2 class="block title is-3">Explore the Landscape</h2>
             <p>paragraph about rovers Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo deserunt nisi nesciunt harum ad molestiae ipsam voluptatibus? Dignissimos mollitia, culpa magni saepe eligendi sunt nulla, ducimus obcaecati labore distinctio provident.</p>
 
         </section>
 
         <!-- TODO Jeramy section -->
         <section>
-            <h2>Who is in Space Right Now?</h2>
+            <h2 class="block title is-3">Who is in Space Right Now?</h2>
         </section>
 
         <!-- TODO Kristin section -->
         <section>
-            <h2 class="block">Your Ride to the Next Planet</h2>
+            <h2 class="block title is-3">Your Ride to the Next Planet</h2>
+            <!-- starships -->
             <div class="block">
-                <div class="block">
+                <div class="block subtitle is-5">
                     <p>Click to see information on available starships:</p>
                 </div>
-                <div class="columns block"id="ship-buttons">
+                <!-- starship buttons -->
+                <div class="columns block" id="ship-buttons">
                     <div class="column">
                         <button type="submit" class="button is-danger" id="star-destroyer">Star Destroyer</button>
                     </div>
@@ -58,18 +60,22 @@
                         <button type="submit" class="button is-danger" id="rebel-transport">Rebel Transport</button>
                     </div>
                 </div>
-                <div class="block" id="starship-info"></div>
+                <!-- starship information display -->
+                <div class="block card has-background-grey-lighter" id="starship-info"></div>
             </div>
+            <!-- form elements -->
             <div class="block">
-                <div>
+                <div class="subtitle is-5">
                     <p>Enter your name and select your starship:</p>
                 </div>
+                <!-- input fields-->
                 <div class="field">
                     <label class="label">Name</label>
                     <div>
                         <input class="input" id="name-input" type="text" placeholder="e.g. Hans Solo"/>
                     </div>  
                 </div>
+                <!-- starship dropdown -->
                 <div class="field">
                     <label class="label">Starship</label>
                     <div class="control has-icons-left">
@@ -83,19 +89,22 @@
                           <option value="6">Rebel Transport</option>
                         </select>
                         <span class="icon is-small is-left">
-                            <i class="fas fa-space-shuttle"></i>
+                            <i class="fas fa-rocket"></i>
                         </span>
                       </div>
                     </div>
                 </div>
+                <!-- submit -->
                 <div class="field">
                     <div class="control">
                         <button type="submit" class="button is-danger" id="submit-btn">Submit</button>
                     </div>
                 </div>
             </div>
+            <!-- current passenger data -->
             <div class="block" id="name-starship"></div>
-            <div class="block" id="past-name-starship"></div>
+            <!-- saved passengers display -->
+            <table class="table block" id="past-name-starship"></table>
         </section>
 
         <footer>

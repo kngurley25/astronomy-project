@@ -67,7 +67,8 @@ var starshipInfo = function(shipData) {
     // starship data to display
     
     var shipName = document.createElement("p");
-    shipName.textContent = "Starship Name: " + shipData.name;
+    shipName.textContent = shipData.name;
+    shipName.classList = "card-header-title";
 
     var shipModel = document.createElement("p");
     shipModel.textContent = "Model: " + shipData.model;
@@ -157,12 +158,22 @@ var loadSubmits = function() {
 
     for (var i = 0; i < savedPassengers.length; i++) {
 
-        var pastTravelers = document.createElement("p");
-        pastTravelers.textContent = "Past Traveler: " + savedPassengers[i].split(",")[0] + " - " + savedPassengers[i].split(",")[1];
+        var pastTravelers = document.createElement("tr");
+        var traveler = document.createElement("td");
+        traveler.textContent = "Passenger: " + savedPassengers[i].split(",")[0];
+        var travelerShip = document.createElement("td");
+        travelerShip.textContent = "Starship: " + savedPassengers[i].split(",")[1];
+        
+        // pastTravelers.textContent = "Past Traveler: " + savedPassengers[i].split(",")[0] + " - " + savedPassengers[i].split(",")[1];
+        
+        pastTravelers.appendChild(traveler);
+        pastTravelers.appendChild(travelerShip);
         pastPassengerEl.appendChild(pastTravelers);
 
         pastSubmits.push(savedPassengers[i]);
     }
+    
+    
 
     localStorage.setItem("passengers", JSON.stringify(savedPassengers));
 }
