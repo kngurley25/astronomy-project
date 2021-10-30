@@ -33,6 +33,52 @@
         <!-- TODO Kristin section -->
         <section>
             <h2>Your Ride to the Next Planet</h2>
+            <div>
+                <div>
+                    <p>Click to see information on available starships:</p>
+                </div>
+                <div id="ship-buttons">
+                    <button type="submit" class="button" id="star-destroyer">Star Destroyer</button>
+                    <button type="submit" class="button" id="death-star">Death Star</button>
+                    <button type="submit" class="button" id="millennium-falcon">Millennium Falcon</button>
+                    <button type="submit" class="button" id="y-wing">Y-Wing</button>
+                    <button type="submit" class="button" id="x-wing">X-Wing</button>
+                    <button type="submit" class="button" id="rebel-transport">Rebel Transport</button>
+                </div>
+                <div id="starship-info"></div>
+            </div>
+            <div>
+                <div>
+                    <p>Enter your name and select your starship:</p>
+                </div>
+                <div class="field">
+                    <label class="label">Name</label>
+                    <div>
+                        <input class="input" id="name-input" type="text" placeholder="e.g. Hans Solo"/>
+                    </div>  
+                </div>
+                <div class="field">
+                    <label class="label">Starship</label>
+                    <div class="control">
+                      <div class="select">
+                        <select id="starship-dropdown">
+                          <option value="1">Star Destroyer</option>
+                          <option value="2">Death Star</option>
+                          <option value="3">Millennium Falcon</option>
+                          <option value="4">Y-Wing</option>
+                          <option value="5">X-Wing</option>
+                          <option value="6">Rebel Transport</option>
+                        </select>
+                      </div>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="control">
+                        <button type="submit" class="button" id="submit-btn">Submit</button>
+                    </div>
+                </div>
+            </div>
+            <div id="name-starship"></div>
         </section>
 
         <footer>
@@ -42,6 +88,8 @@
         
     </main>
 
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <!-- moment cdn -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.js"></script>
     <script src="./assets/js/script.js"></script>
