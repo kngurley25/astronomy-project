@@ -130,7 +130,7 @@ var displayData = function(inputName, starShip) {
 
     var displayName = document.createElement("p");
     displayName.textContent = "Passenger Name: " + inputName;
-    displayName.classList = "card-header-title is-capitalized";
+    displayName.classList = "has-text-weight-bold is-capitalized";
 
     var displayShipName = document.createElement("p");
     displayShipName.textContent = "Selected Starship: " + starShip;
@@ -138,10 +138,13 @@ var displayData = function(inputName, starShip) {
     var launch = document.createElement("p");
     launch.textContent = "Scheduled Launch: " + moment().add(3, 'days').format("dddd, MMMM Do YYYY, h:mm:ss a");
 
+    var message = document.createElement("p");
+    message.textContent = "Good luck space traveler - may the force be with you!"
+
+    nameAndStarshipEl.prepend(message);
     nameAndStarshipEl.prepend(launch);
     nameAndStarshipEl.prepend(displayShipName);
     nameAndStarshipEl.prepend(displayName);
-
 }
 
 // local storage
