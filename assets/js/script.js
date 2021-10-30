@@ -5,8 +5,10 @@ var shipButtonEl = document.querySelector("#ship-buttons");
 var inputNameEl = document.querySelector("#name-input");
 var submitButtonEl = document.querySelector("#submit-btn");
 var shipDropdownEl = document.querySelector("#starship-dropdown");
+
 var nameAndStarshipEl = document.querySelector("#name-starship");
 var pastPassengerEl = document.querySelector("#past-name-starship");
+var tableHeadingEl = document.querySelector("#table-heading");
 
 // ship array
 var shipObject = {
@@ -128,7 +130,7 @@ var displayData = function(inputName, starShip) {
 
     var displayName = document.createElement("p");
     displayName.textContent = "Passenger Name: " + inputName;
-    displayName.classList = "is-capitalized"
+    displayName.classList = "card-header-title is-capitalized";
 
     var displayShipName = document.createElement("p");
     displayShipName.textContent = "Selected Starship: " + starShip;
@@ -157,13 +159,18 @@ var loadSubmits = function() {
         return false;
     }
 
+    tableHeadingEl.textContent = "Past travelers and starships";
+
     for (var i = 0; i < savedPassengers.length; i++) {
 
         var pastTravelers = document.createElement("tr");
+
         var traveler = document.createElement("td");
-        traveler.textContent = "Passenger: " + savedPassengers[i].split(",")[0];
+        traveler.textContent = savedPassengers[i].split(",")[0];
+        traveler.classList = "is-capitalized";
+
         var travelerShip = document.createElement("td");
-        travelerShip.textContent = "Starship: " + savedPassengers[i].split(",")[1];
+        travelerShip.textContent = savedPassengers[i].split(",")[1];
         
         // pastTravelers.textContent = "Past Traveler: " + savedPassengers[i].split(",")[0] + " - " + savedPassengers[i].split(",")[1];
         

@@ -1,4 +1,25 @@
+/* starship information card style */
+.card {
+    max-width: 70%;
+    margin: auto;
+}
+
 #starship-info p {
     padding: 0.5rem 1rem;
 }
 
+/* starship input form style */
+.starship-form {
+    max-width: 50%;
+    margin: auto;
+}
+
+/* passenger information card style */
+#name-starship p {
+    padding: 0.5rem 1rem;
+}
+
+/* saved passenger table style */
+.table {
+    margin: auto;
+}
