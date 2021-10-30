@@ -7,6 +7,7 @@
 
     <!-- Bulma CSS framework cdn -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <script src="https://kit.fontawesome.com/f0bd784ee5.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./assets/css/style.css">
 
     <title>Welcome to Mars!</title>
@@ -32,22 +33,34 @@
 
         <!-- TODO Kristin section -->
         <section>
-            <h2>Your Ride to the Next Planet</h2>
-            <div>
-                <div>
+            <h2 class="block">Your Ride to the Next Planet</h2>
+            <div class="block">
+                <div class="block">
                     <p>Click to see information on available starships:</p>
                 </div>
-                <div id="ship-buttons">
-                    <button type="submit" class="button" id="star-destroyer">Star Destroyer</button>
-                    <button type="submit" class="button" id="death-star">Death Star</button>
-                    <button type="submit" class="button" id="millennium-falcon">Millennium Falcon</button>
-                    <button type="submit" class="button" id="y-wing">Y-Wing</button>
-                    <button type="submit" class="button" id="x-wing">X-Wing</button>
-                    <button type="submit" class="button" id="rebel-transport">Rebel Transport</button>
+                <div class="columns block"id="ship-buttons">
+                    <div class="column">
+                        <button type="submit" class="button is-danger" id="star-destroyer">Star Destroyer</button>
+                    </div>
+                    <div class="column">
+                        <button type="submit" class="button is-danger" id="death-star">Death Star</button>
+                    </div>
+                    <div class="column">
+                        <button type="submit" class="button is-danger" id="millennium-falcon">Millennium Falcon</button>
+                    </div>
+                    <div class="column">
+                        <button type="submit" class="button is-danger" id="y-wing">Y-Wing</button>
+                    </div>
+                    <div class="column">
+                        <button type="submit" class="button is-danger" id="x-wing">X-Wing</button>
+                    </div>
+                    <div class="column">
+                        <button type="submit" class="button is-danger" id="rebel-transport">Rebel Transport</button>
+                    </div>
                 </div>
-                <div id="starship-info"></div>
+                <div class="block" id="starship-info"></div>
             </div>
-            <div>
+            <div class="block">
                 <div>
                     <p>Enter your name and select your starship:</p>
                 </div>
@@ -59,7 +72,7 @@
                 </div>
                 <div class="field">
                     <label class="label">Starship</label>
-                    <div class="control">
+                    <div class="control has-icons-left">
                       <div class="select">
                         <select id="starship-dropdown">
                           <option value="1">Star Destroyer</option>
@@ -69,16 +82,20 @@
                           <option value="5">X-Wing</option>
                           <option value="6">Rebel Transport</option>
                         </select>
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-space-shuttle"></i>
+                        </span>
                       </div>
                     </div>
                 </div>
                 <div class="field">
                     <div class="control">
-                        <button type="submit" class="button" id="submit-btn">Submit</button>
+                        <button type="submit" class="button is-danger" id="submit-btn">Submit</button>
                     </div>
                 </div>
             </div>
-            <div id="name-starship"></div>
+            <div class="block" id="name-starship"></div>
+            <div class="block" id="past-name-starship"></div>
         </section>
 
         <footer>

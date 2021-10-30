@@ -6,6 +6,7 @@ var inputNameEl = document.querySelector("#name-input");
 var submitButtonEl = document.querySelector("#submit-btn");
 var shipDropdownEl = document.querySelector("#starship-dropdown");
 var nameAndStarshipEl = document.querySelector("#name-starship");
+var pastPassengerEl = document.querySelector("#past-name-starship");
 
 // ship array
 var shipObject = {
@@ -65,7 +66,7 @@ var starshipInfo = function(shipData) {
 
     // starship data to display
     
-    var shipName = document.createElement("h3");
+    var shipName = document.createElement("p");
     shipName.textContent = "Starship Name: " + shipData.name;
 
     var shipModel = document.createElement("p");
@@ -158,7 +159,7 @@ var loadSubmits = function() {
 
         var pastTravelers = document.createElement("p");
         pastTravelers.textContent = "Past Traveler: " + savedPassengers[i].split(",")[0] + " - " + savedPassengers[i].split(",")[1];
-        nameAndStarshipEl.appendChild(pastTravelers);
+        pastPassengerEl.appendChild(pastTravelers);
 
         pastSubmits.push(savedPassengers[i]);
     }
