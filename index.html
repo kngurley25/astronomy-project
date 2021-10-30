@@ -15,57 +15,59 @@
 
 <body>
     <header>
-        <h1>Welcome to Mars!</h1>
+        <h1 class="title is-1">Welcome to Mars!</h1>
     </header>
 
     <main>
         <!-- TODO Grace section -->
-        <section>
-            <h2 class="block title is-3">Explore the Landscape</h2>
+        <section class="container section">
+            <h2 class="block title is-3 has-text-centered">Explore the Landscape</h2>
             <p>paragraph about rovers Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo deserunt nisi nesciunt harum ad molestiae ipsam voluptatibus? Dignissimos mollitia, culpa magni saepe eligendi sunt nulla, ducimus obcaecati labore distinctio provident.</p>
 
         </section>
 
         <!-- TODO Jeramy section -->
-        <section>
-            <h2 class="block title is-3">Who is in Space Right Now?</h2>
+        <section class="container section">
+            <h2 class="block title is-3 has-text-centered">Who is in Space Right Now?</h2>
         </section>
 
         <!-- TODO Kristin section -->
-        <section>
-            <h2 class="block title is-3">Your Ride to the Next Planet</h2>
+        <section class="container section">
+            <h2 class="block title is-3 has-text-centered">Your Ride to the Next Planet</h2>
+            
             <!-- starships -->
             <div class="block">
-                <div class="block subtitle is-5">
+                <div class="block subtitle is-5 has-text-centered">
                     <p>Click to see information on available starships:</p>
                 </div>
                 <!-- starship buttons -->
-                <div class="columns block" id="ship-buttons">
-                    <div class="column">
+                <div class="level block" id="ship-buttons">
+                    <div class="level-item">
                         <button type="submit" class="button is-danger" id="star-destroyer">Star Destroyer</button>
                     </div>
-                    <div class="column">
+                    <div class="level-item">
                         <button type="submit" class="button is-danger" id="death-star">Death Star</button>
                     </div>
-                    <div class="column">
+                    <div class="level-item">
                         <button type="submit" class="button is-danger" id="millennium-falcon">Millennium Falcon</button>
                     </div>
-                    <div class="column">
+                    <div class="level-item">
                         <button type="submit" class="button is-danger" id="y-wing">Y-Wing</button>
                     </div>
-                    <div class="column">
+                    <div class="level-item">
                         <button type="submit" class="button is-danger" id="x-wing">X-Wing</button>
                     </div>
-                    <div class="column">
+                    <div class="level-item">
                         <button type="submit" class="button is-danger" id="rebel-transport">Rebel Transport</button>
                     </div>
                 </div>
                 <!-- starship information display -->
                 <div class="block card has-background-grey-lighter" id="starship-info"></div>
             </div>
+
             <!-- form elements -->
             <div class="block">
-                <div class="subtitle is-5">
+                <div class="subtitle is-5 has-text-centered">
                     <p>Enter your name and select your starship:</p>
                 </div>
                 <!-- input fields-->
@@ -101,10 +103,13 @@
                     </div>
                 </div>
             </div>
-            <!-- current passenger data -->
-            <div class="block" id="name-starship"></div>
-            <!-- saved passengers display -->
-            <table class="table block" id="past-name-starship"></table>
+
+            <div class="block">
+                <!-- current passenger data -->
+                <div class="block" id="name-starship"></div>
+                <!-- saved passengers display -->
+                <table class="table block" id="past-name-starship"></table>
+            </div>
         </section>
 
         <footer>

@@ -128,6 +128,7 @@ var displayData = function(inputName, starShip) {
 
     var displayName = document.createElement("p");
     displayName.textContent = "Passenger Name: " + inputName;
+    displayName.classList = "is-capitalized"
 
     var displayShipName = document.createElement("p");
     displayShipName.textContent = "Selected Starship: " + starShip;
@@ -173,8 +174,6 @@ var loadSubmits = function() {
         pastSubmits.push(savedPassengers[i]);
     }
     
-    
-
     localStorage.setItem("passengers", JSON.stringify(savedPassengers));
 }
 
