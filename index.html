@@ -13,7 +13,7 @@
     <title>Welcome to Mars!</title>
 </head>
 
-<body>
+<body class="is-family-monospace">
     <header>
         <h1 class="title is-1">Welcome to Mars!</h1>
     </header>
@@ -71,29 +71,31 @@
                     <p>Enter your name and select your starship:</p>
                 </div>
                 <!-- input fields-->
-                <div class="field">
-                    <label class="label">Name</label>
-                    <div>
-                        <input class="input" id="name-input" type="text" placeholder="e.g. Hans Solo"/>
-                    </div>  
-                </div>
+                <div class="box">
+                    <div class="field">
+                        <label class="label">Name</label>
+                        <div>
+                            <input class="input" id="name-input" type="text" placeholder="e.g. Hans Solo"/>
+                        </div>  
+                    </div>
                 <!-- starship dropdown -->
-                <div class="field">
-                    <label class="label">Starship</label>
-                    <div class="control has-icons-left">
-                      <div class="select">
-                        <select id="starship-dropdown">
-                          <option value="1">Star Destroyer</option>
-                          <option value="2">Death Star</option>
-                          <option value="3">Millennium Falcon</option>
-                          <option value="4">Y-Wing</option>
-                          <option value="5">X-Wing</option>
-                          <option value="6">Rebel Transport</option>
-                        </select>
-                        <span class="icon is-small is-left">
-                            <i class="fas fa-rocket"></i>
-                        </span>
-                      </div>
+                    <div class="field">
+                        <label class="label">Starship</label>
+                        <div class="control has-icons-left">
+                        <div class="select">
+                            <select id="starship-dropdown">
+                            <option value="1">Star Destroyer</option>
+                            <option value="2">Death Star</option>
+                            <option value="3">Millennium Falcon</option>
+                            <option value="4">Y-Wing</option>
+                            <option value="5">X-Wing</option>
+                            <option value="6">Rebel Transport</option>
+                            </select>
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-rocket"></i>
+                            </span>
+                        </div>
+                        </div>
                     </div>
                 </div>
                 <!-- submit -->

@@ -1,3 +1,22 @@
+/* all page style */
+:root {
+    --primary-color: #fff;
+    --background-color: #1E1B1A;
+}
+body {
+    color: var(--primary-color);
+    background-color:var(--background-color);
+}
+.title {
+    color:var(--primary-color);
+}
+.subtitle {
+    color:var(--primary-color);
+}
+.button {
+    font-family: monospace;
+}
+
 /* starship information card style */
 .card {
     max-width: 70%;
@@ -12,6 +31,7 @@
 .starship-form {
     max-width: 50%;
     margin: auto;
+    border: ;
 }
 
 /* passenger information card style */
@@ -33,5 +53,5 @@
 
 .footer-text {
     width: 35%;
-    color: white;
+    color: var(--primary-color);
 }
