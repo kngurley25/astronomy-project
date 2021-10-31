@@ -45,7 +45,6 @@ header {
 .starship-form {
     max-width: 50%;
     margin: auto;
-    border: ;
 }
 .input {
     font-family: monospace;
@@ -74,4 +73,19 @@ header {
 .footer-text {
     width: 35%;
     color: var(--primary-color);
+}
+
+
+
+/* media queries in addition to Bulma */
+@media screen and (max-width: 768px)    {
+    .starship-form {
+        max-width: 70%;
+    }
+}
+
+@media screen and (max-width: 580px)    {
+    .starship-form {
+        max-width: 100%;
+    }
 }
