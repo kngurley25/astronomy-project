@@ -2,13 +2,21 @@
 :root {
     --primary-color: #fff;
     --background-color: #1E1B1A;
+    --secondary-color: #39DCFB;
 }
 body {
     color: var(--primary-color);
-    background-color:var(--background-color);
+    background-color: var(--background-color);
 }
 .title {
     color:var(--primary-color);
+    padding-bottom: 0.65rem;
+}
+h2 {
+    border-bottom: .2rem solid;
+    border-color:var(--secondary-color);
+    width: 60%;
+    margin: auto;
 }
 .subtitle {
     color:var(--primary-color);
