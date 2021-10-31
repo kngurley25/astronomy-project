@@ -23,3 +23,15 @@
 .table {
     margin: auto;
 }
+
+/* footer style */
+.footer {
+    background-image: url("../images/mars_landscape_PIA05200_orig_edit.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.footer-text {
+    width: 35%;
+    color: white;
+}
