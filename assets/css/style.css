@@ -25,6 +25,12 @@ h2 {
     font-family: monospace;
 }
 
+/* hero style */
+header {
+    background-image: url(../images/mars_artist_PIA14832_thumb.jpg);
+    background-size: cover;
+}
+
 /* starship information card style */
 .card {
     max-width: 70%;
