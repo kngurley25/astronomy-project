@@ -66,12 +66,12 @@
             </div>
 
             <!-- form elements -->
-            <div class="block starship-form">
+            <div class="block">
                 <div class="subtitle is-5 has-text-centered">
                     <p>Enter your name and select your starship:</p>
                 </div>
                 <!-- input fields-->
-                <div class="box">
+                <div class="box starship-form">
                     <div class="field">
                         <label class="label">Name</label>
                         <div>
@@ -97,21 +97,22 @@
                         </div>
                         </div>
                     </div>
-                </div>
+                
                 <!-- submit -->
-                <div class="field">
-                    <div class="control">
-                        <button type="submit" class="button is-danger" id="submit-btn">Submit</button>
+                    <div class="field">
+                        <div class="control">
+                            <button type="submit" class="button is-danger" id="submit-btn">Submit</button>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div class="block saved-passengers">
                 <!-- current passenger data -->
-                <div class="block card has-background-info-light has-text-centered" id="name-starship"></div>
+                <div class="block card has-background-grey-lighter has-text-centered" id="name-starship"></div>
                 <!-- saved passengers display -->
-                <table class="table block" id="past-name-starship">
-                    <th id="table-heading"></th>
+                <table class="table block has-background-grey-lighter" id="past-name-starship">
+                    <div id="table-heading"></div>
                 </table>
             </div>
         </section>

@@ -8,7 +8,7 @@ var shipDropdownEl = document.querySelector("#starship-dropdown");
 
 var nameAndStarshipEl = document.querySelector("#name-starship");
 var pastPassengerEl = document.querySelector("#past-name-starship");
-var tableHeadingEl = document.querySelector("#table-heading");
+var tableHeadingEl = document.querySelector("#table");
 
 // ship array
 var shipObject = {
@@ -162,7 +162,9 @@ var loadSubmits = function() {
         return false;
     }
 
-    tableHeadingEl.textContent = "Past travelers and starships";
+    var pastTravelerHeading = document.createElement("th");
+    pastTravelerHeading.textContent = "Past travelers and starships:";
+    pastPassengerEl.appendChild(pastTravelerHeading);
 
     for (var i = 0; i < savedPassengers.length; i++) {
 

@@ -33,6 +33,12 @@ body {
     margin: auto;
     border: ;
 }
+.input {
+    font-family: monospace;
+}
+#starship-dropdown {
+    font-family: monospace;
+}
 
 /* passenger information card style */
 #name-starship p {
