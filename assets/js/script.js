@@ -1,3 +1,46 @@
+
+//HTML elements
+var whoInSpaceEl = document.querySelector("#who-in-space-button");
+var peopleSelectionEl = document.querySelector("#who-space-results");
+
+// open notify API source people in space right now
+var getSpacePeople = function () {
+
+    var apiUrl = "http://api.open-notify.org/astros.json";
+
+    fetch(apiUrl)
+        .then(function(response) {
+            console.log(response);
+            console.log(apiUrl.value);
+            if (response.ok) {
+                response.json().then(function(peopleInfo) {
+                    console.log(peopleInfo);
+                   
+                    displayNames(peopleInfo);
+
+                })
+            }
+        })
+}
+
+var displayNames = function(peopleData) {
+    
+    // display number of people in space
+    var number = document.createElement("p");
+    number.textContent = peopleData.number;
+    
+    // would loop through to display all names and craft to page
+    var names = document.createElement("p");
+    names.textContent = peopleData.people[0].name;
+
+    peopleSectionEl.appendChild(number);
+    peopleSectionEl.appendChild(names);
+
+}
+
+whoInSpaceEl.addEventListener("click", getSpacePeople);
+
+
 //HTML elements
 var starshipEl = document.querySelector("#starship-info");
 var shipButtonEl = document.querySelector("#ship-buttons");
