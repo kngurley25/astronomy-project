@@ -8,10 +8,128 @@ var shipDropdownEl = document.querySelector("#starship-dropdown");
 var nameAndStarshipEl = document.querySelector("#name-starship");
 
 // mars rover HTML elements
-var cameraFhazBtn = document.getElementById("cameraFhaz");
-var cameraRhazBtn = document.getElementById("cameraRhaz");
-var cameraMastBtn = document.getElementById("cameraMast");
-var cameraPancamBtn = document.getElementById("cameraPancam");
+var rhaz = document.getElementById("rhaz");
+var fhaz = document.getElementById("fhaz");
+var navcam = document.getElementById("navcam");
+var marsRoverPicture = document.querySelector("#marsRoverPicture");
+
+var todaysDate = moment().format("YYYY-MM-DD");
+// NASA API key
+var apiKey = "fjvfRJ8cEyas9WxKMPUG1LSDE9gdd3Bf4XWRrIe2";
+
+// NASA mars rover photo API, camera Rhaz on curiosity
+var getPhotosRhaz = function () {
+
+    // latest photos query by earth date
+    var apiUrl = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/latest_photos?api_key=" + apiKey + "&earth_date=" + todaysDate + "&camera=rhaz";
+
+    fetch(apiUrl)
+        .then(function(response) {
+            if (response.ok) {
+                response.json().then(function(photoInfo) {
+                    displayPhotoRhaz(photoInfo);
+                })
+            }
+        })
+}
+
+// NASA mars rover photo API, camera Fhaz on curiosity
+var getPhotosFhaz = function () {
+
+    // latest photos query by earth date
+    var apiUrl = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/latest_photos?api_key=" + apiKey + "&earth_date=" + todaysDate + "&camera=fhaz";
+
+    fetch(apiUrl)
+        .then(function(response) {
+            if (response.ok) {
+                response.json().then(function(photoInfo) {
+                    displayPhotoFhaz(photoInfo);
+                })
+            }
+        })
+}
+// NASA mars rover photo API, camera Navcam on curiosity
+var getPhotosNavcam = function () {
+
+    // latest photos query by earth date
+    var apiUrl = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/latest_photos?api_key=" + apiKey + "&earth_date=" + todaysDate + "&camera=navcam";
+
+    fetch(apiUrl)
+        .then(function(response) {
+            if (response.ok) {
+                response.json().then(function(photoInfo) {
+                    displayPhotoNavcam(photoInfo);
+                })
+            }
+        })
+}
+
+
+  var displayPhotoRhaz = function(photoInfo) {
+    
+    // display info for single photo. TODO: determine how we want to loop or filter through arrays
+    var rhaz = document.createElement("p");
+    rhaz.textContent = "rovername = " + photoInfo.latest_photos[0].rover.name;
+    
+    var date = document.createElement("p");
+    date.textContent = "date of photo = " + photoInfo.latest_photos[0].earth_date;
+
+    var sol = document.createElement("p");
+    sol.textContent = "sol = " + photoInfo.latest_photos[0].sol;
+
+    var image = document.createElement("img");
+    image.src = photoInfo.latest_photos[0].img_src;
+
+    marsRoverPicture.appendChild(rhaz);
+    marsRoverPicture.appendChild(date);
+    marsRoverPicture.appendChild(sol);
+    marsRoverPicture.appendChild(image);
+
+}
+
+var displayPhotoFhaz = function(photoInfo) {
+    
+    // display info for single photo. TODO: determine how we want to loop or filter through arrays
+    var fhaz = document.createElement("p");
+    fhaz.textContent = "rovername = " + photoInfo.latest_photos[0].rover.name;
+    
+    var date = document.createElement("p");
+    date.textContent = "date of photo = " + photoInfo.latest_photos[0].earth_date;
+
+    var sol = document.createElement("p");
+    sol.textContent = "sol = " + photoInfo.latest_photos[0].sol;
+
+    var image = document.createElement("img");
+    image.src = photoInfo.latest_photos[0].img_src;
+
+    marsRoverPicture.appendChild(fhaz);
+    marsRoverPicture.appendChild(date);
+    marsRoverPicture.appendChild(sol);
+    marsRoverPicture.appendChild(image);
+
+}
+
+var displayPhotoNavcam = function(photoInfo) {
+    
+    // display info for single photo. TODO: determine how we want to loop or filter through arrays
+    var fhaz = document.createElement("p");
+    navcam.textContent = "rovername = " + photoInfo.latest_photos[0].rover.name;
+    
+    var date = document.createElement("p");
+    date.textContent = "date of photo = " + photoInfo.latest_photos[0].earth_date;
+
+    var sol = document.createElement("p");
+    sol.textContent = "sol = " + photoInfo.latest_photos[0].sol;
+
+    var image = document.createElement("img");
+    image.src = photoInfo.latest_photos[0].img_src;
+
+    marsRoverPicture.appendChild(navcam);
+    marsRoverPicture.appendChild(date);
+    marsRoverPicture.appendChild(sol);
+    marsRoverPicture.appendChild(image);
+
+}
 
 // ship array
 var shipObject = {
@@ -173,10 +291,9 @@ var loadSubmits = function() {
 }
 
 // event listener for mars rover buttons
-cameraFhazBtn.addEventListener("click", function() {console.log("test")});
-cameraRhazBtn.addEventListener("click", function() {console.log("test")});
-cameraMastBtn.addEventListener("click", function() {console.log("test")});
-cameraPancamBtn.addEventListener("click", function() {console.log("test")});
+rhaz.addEventListener("click", getPhotosRhaz());
+fhaz.addEventListener("click", getPhotosFhaz());
+navcam.addEventListener("click", getPhotosNavcam());
 
 
 // event listener to starship buttons
