@@ -115,7 +115,7 @@ var displayPhotoFhaz = function(photoInfo) {
 var displayPhotoNavcam = function(photoInfo) {
     
     // display info for single photo. TODO: determine how we want to loop or filter through arrays
-    var fhaz = document.createElement("p");
+    var navcam = document.createElement("p");
     navcam.textContent = "rovername = " + photoInfo.latest_photos[0].rover.name;
     
     var date = document.createElement("p");
