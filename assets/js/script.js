@@ -5,7 +5,10 @@ var shipButtonEl = document.querySelector("#ship-buttons");
 var inputNameEl = document.querySelector("#name-input");
 var submitButtonEl = document.querySelector("#submit-btn");
 var shipDropdownEl = document.querySelector("#starship-dropdown");
+
 var nameAndStarshipEl = document.querySelector("#name-starship");
+var pastPassengerEl = document.querySelector("#past-name-starship");
+var tableHeadingEl = document.querySelector("#table");
 
 // mars rover HTML elements
 var rhaz = document.getElementById("rhaz");
@@ -189,8 +192,9 @@ var starshipInfo = function(shipData) {
 
     // starship data to display
     
-    var shipName = document.createElement("h3");
-    shipName.textContent = "Starship Name: " + shipData.name;
+    var shipName = document.createElement("p");
+    shipName.textContent = shipData.name;
+    shipName.classList = "card-header-title";
 
     var shipModel = document.createElement("p");
     shipModel.textContent = "Model: " + shipData.model;
@@ -250,6 +254,7 @@ var displayData = function(inputName, starShip) {
 
     var displayName = document.createElement("p");
     displayName.textContent = "Passenger Name: " + inputName;
+    displayName.classList = "has-text-weight-bold is-capitalized";
 
     var displayShipName = document.createElement("p");
     displayShipName.textContent = "Selected Starship: " + starShip;
@@ -257,10 +262,13 @@ var displayData = function(inputName, starShip) {
     var launch = document.createElement("p");
     launch.textContent = "Scheduled Launch: " + moment().add(3, 'days').format("dddd, MMMM Do YYYY, h:mm:ss a");
 
+    var message = document.createElement("p");
+    message.textContent = "Good luck space traveler - may the force be with you!"
+
+    nameAndStarshipEl.prepend(message);
     nameAndStarshipEl.prepend(launch);
     nameAndStarshipEl.prepend(displayShipName);
     nameAndStarshipEl.prepend(displayName);
-
 }
 
 // local storage
@@ -278,15 +286,30 @@ var loadSubmits = function() {
         return false;
     }
 
+    var pastTravelerHeading = document.createElement("th");
+    pastTravelerHeading.textContent = "Past travelers and starships:";
+    pastPassengerEl.appendChild(pastTravelerHeading);
+
     for (var i = 0; i < savedPassengers.length; i++) {
 
-        var pastTravelers = document.createElement("p");
-        pastTravelers.textContent = "Past Traveler: " + savedPassengers[i].split(",")[0] + " - " + savedPassengers[i].split(",")[1];
-        nameAndStarshipEl.appendChild(pastTravelers);
+        var pastTravelers = document.createElement("tr");
+
+        var traveler = document.createElement("td");
+        traveler.textContent = savedPassengers[i].split(",")[0];
+        traveler.classList = "is-capitalized";
+
+        var travelerShip = document.createElement("td");
+        travelerShip.textContent = savedPassengers[i].split(",")[1];
+        
+        // pastTravelers.textContent = "Past Traveler: " + savedPassengers[i].split(",")[0] + " - " + savedPassengers[i].split(",")[1];
+        
+        pastTravelers.appendChild(traveler);
+        pastTravelers.appendChild(travelerShip);
+        pastPassengerEl.appendChild(pastTravelers);
 
         pastSubmits.push(savedPassengers[i]);
     }
-
+    
     localStorage.setItem("passengers", JSON.stringify(savedPassengers));
 }
 
