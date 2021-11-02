@@ -19,7 +19,7 @@ Site data from the following APIs:
 ## Deployed at
 https://kngurley25.github.io/astronomy-project/
 
-## Image - add webpage screenshot
+## Image
 ![screenshot](./image.PNG)
 
 ## Contributors
