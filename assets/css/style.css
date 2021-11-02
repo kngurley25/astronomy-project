@@ -102,4 +102,8 @@ header {
     .starship-form {
         max-width: 100%;
     }
+    .quiz-answer img {
+        max-width: 80%;
+        max-height: 80%;
+    }
 }
