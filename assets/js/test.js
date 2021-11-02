@@ -212,3 +212,34 @@ getWeather();
 getEarthPhoto();
 getSpacePeople();
 getStarship();
+
+
+
+// if we need another section
+
+// create an array for this data, loop through a slide deck of cards
+var thermalTide = "PIA16478";
+var weatherMap = "PIA15962";
+var dailyGlobal = "PIA02653";
+var springCrater = "PIA02325";
+var marsCore = "PIA00974";
+
+var infoPhotos = function () {
+
+    var apiUrl = "https://images-api.nasa.gov/search?q=PIA02653";
+
+    fetch(apiUrl)
+        .then(function(response) {
+            // console.log(response);
+            if (response.ok) {
+                response.json().then(function(infoPhotos) {
+                    console.log(infoPhotos);
+
+                    // starshipInfo(starship);
+
+                })
+            }
+        })
+}
+
+infoPhotos();

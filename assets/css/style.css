@@ -1,3 +1,114 @@
+/* all page style */
+:root {
+    --primary-color: #fff;
+    --background-color: #1E1B1A;
+    --secondary-color: #39DCFB;
+}
+body {
+    color: var(--primary-color);
+    background-color: var(--background-color);
+}
+.title {
+    color:var(--primary-color);
+    padding-bottom: 0.65rem;
+}
+h2 {
+    border-bottom: .2rem solid;
+    border-color:var(--secondary-color);
+    width: 60%;
+    margin: auto;
+}
+.subtitle {
+    color:var(--primary-color);
+}
+.button {
+    font-family: monospace;
+}
+
+/* hero style */
+header {
+    background-image: url(../images/mars_artist_PIA14832_thumb.jpg);
+    background-size: cover;
+}
+
+/* quiz answer styles */
+.quiz-answer p {
+    color:var(--secondary-color);
+    text-align: center;
+    margin-bottom: .5rem;
+}
+.quiz-answer img {
+    max-width: 40%;
+    max-height: 40%;
+    border: solid 3px;
+    border-color: var(--secondary-color);
+    margin: auto;
+}
+
+/* mars rover button css */
 .roverButton {
     width: 150px;
+}
+
+/* starship information card style */
+.card {
+    max-width: 70%;
+    margin: auto;
+}
+
+#starship-info p {
+    padding: 0.5rem 1rem;
+}
+
+/* starship input form style */
+.starship-form {
+    max-width: 50%;
+    margin: auto;
+}
+.input {
+    font-family: monospace;
+}
+#starship-dropdown {
+    font-family: monospace;
+}
+
+/* passenger information card style */
+#name-starship p {
+    padding: 0.5rem 1rem;
+}
+
+/* saved passenger table style */
+.table {
+    margin: auto;
+}
+
+/* footer style */
+.footer {
+    background-image: url("../images/mars_landscape_PIA05200_orig_edit.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.footer-text {
+    width: 35%;
+    color: var(--primary-color);
+}
+
+
+
+/* media queries in addition to Bulma */
+@media screen and (max-width: 768px)    {
+    .starship-form {
+        max-width: 70%;
+    }
+}
+
+@media screen and (max-width: 580px)    {
+    .starship-form {
+        max-width: 100%;
+    }
+    .quiz-answer img {
+        max-width: 80%;
+        max-height: 80%;
+    }
 }

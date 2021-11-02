@@ -136,12 +136,12 @@ var displayPhotoNavcam = function(photoInfo) {
 
 // ship array
 var shipObject = {
-    3: "star-destroyer", // starships/3/
-    9: "death-star", // starships/9/
-    10: "millennium-falcon", // starships/10/
-    11: "y-wing", // starships/11/
-    12: "x-wing", // starships/12/
-    17: "rebel-transport" // starships/17/
+    3: "star-destroyer",
+    9: "death-star", 
+    10: "millennium-falcon",
+    11: "y-wing",
+    12: "x-wing", 
+    17: "rebel-transport"
 }
 
 var verifyStarship = function (event) {
