@@ -2,7 +2,7 @@
 
 ## Purpose
 
-<add purpose> 
+AS A space nerd, I WANT to view Mars rover images and other space facts on a single page, SO THAT I can learn and stay up to date about my favorite planet!
 
 ## Technologies
 - HTML
@@ -23,6 +23,6 @@ https://kngurley25.github.io/astronomy-project/
 ![screenshot](./image.PNG)
 
 ## Contributors
-Gracalynn Cunningham
-Kristin Gurley
-Jeramy Sena
+- Gracalynn Cunningham
+- Kristin Gurley
+- Jeramy Sena
