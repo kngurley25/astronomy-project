@@ -25,6 +25,7 @@ var imageArray = [
     }
 ]
 
+var grade = document.createElement("p");
 var verifyAnswer = function (event) {
 
     if ((questionNumber + 1) > imageArray.length) {
@@ -38,11 +39,16 @@ var verifyAnswer = function (event) {
 
         if (btnSelect === correct) {
             
+            grade.textContent = "Correct!";
+
             var nasaId = imageArray[questionNumber].nasaId;
             // console.log(nasaId);
             getImage(nasaId);
             
         } else {
+
+            
+            grade.textContent = "Incorrect!";
             
             var nasaId = imageArray[questionNumber].nasaId;
             // console.log(nasaId);
@@ -73,15 +79,28 @@ var getImage = function (nasaId) {
 
 var displayFact = function(imageInfo) { 
 
+    var image = document.createElement("img");
+    image.src = imageInfo.collection.items[0].links[0].href;
+    image.classList = "card-image";
+
     var caption = document.createElement("p");
     caption.textContent = imageInfo.collection.items[0].data[0].description;
     console.log(caption);
+    caption.classList = "card-content";
     
     if (questionNumber === 1) {
+        displayFactOneEl.appendChild(grade);
+        displayFactOneEl.appendChild(image);
         displayFactOneEl.appendChild(caption);
+
     } else if (questionNumber === 2) {
+        displayFactTwoEl.appendChild(grade);
+        displayFactTwoEl.appendChild(image);
         displayFactTwoEl.appendChild(caption);
+
     } else if (questionNumber === 3) {
+        displayFactThreeEl.appendChild(grade);
+        displayFactThreeEl.appendChild(image);
         displayFactThreeEl.appendChild(caption);
     }
     

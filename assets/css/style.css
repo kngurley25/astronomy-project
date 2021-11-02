@@ -31,6 +31,20 @@ header {
     background-size: cover;
 }
 
+/* quiz answer styles */
+.quiz-answer p {
+    color:var(--secondary-color);
+    text-align: center;
+    margin-bottom: .5rem;
+}
+.quiz-answer img {
+    max-width: 40%;
+    max-height: 40%;
+    border: solid 3px;
+    border-color: var(--secondary-color);
+    margin: auto;
+}
+
 /* starship information card style */
 .card {
     max-width: 70%;
