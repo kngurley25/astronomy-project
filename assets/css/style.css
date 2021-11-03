@@ -31,6 +31,16 @@ header {
     background-size: cover;
 }
 
+.card-container p {
+    padding-top: 15px;
+    font-weight: bolder;    
+}
+
+.media {
+    padding-bottom: 25px;
+    background-position: right;
+}
+
 /* starship information card style */
 .card {
     max-width: 70%;
