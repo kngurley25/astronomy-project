@@ -10,7 +10,7 @@ var peopleInSpaceIndex = 0;
 
 // open notify API source people in space right now
 var getSpacePeople = function () {
-  var apiUrl = "http://api.open-notify.org/astros.json";
+  var apiUrl = "https://cors-everywhere-me.herokuapp.com/http://api.open-notify.org/astros.json";
 
   fetch(apiUrl).then(function (response) {
     console.log(response);
