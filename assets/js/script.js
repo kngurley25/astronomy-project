@@ -53,14 +53,141 @@ var nameAndStarshipEl = document.querySelector("#name-starship");
 var pastPassengerEl = document.querySelector("#past-name-starship");
 var tableHeadingEl = document.querySelector("#table");
 
+// mars rover HTML elements
+var rhaz = document.getElementById("rhaz");
+var fhaz = document.getElementById("fhaz");
+var navcam = document.getElementById("navcam");
+var marsRoverPicture = document.querySelector("#marsRoverPicture");
+
+var todaysDate = moment().format("YYYY-MM-DD");
+// NASA API key
+var apiKey = "fjvfRJ8cEyas9WxKMPUG1LSDE9gdd3Bf4XWRrIe2";
+
+// NASA mars rover photo API, camera Rhaz on curiosity
+var getPhotosRhaz = function () {
+
+    // latest photos query by earth date
+    var apiUrl = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/latest_photos?api_key=" + apiKey + "&earth_date=" + todaysDate + "&camera=rhaz";
+
+    fetch(apiUrl)
+        .then(function(response) {
+            if (response.ok) {
+                response.json().then(function(photoInfo) {
+                    displayPhotoRhaz(photoInfo);
+                })
+            }
+        })
+}
+
+// NASA mars rover photo API, camera Fhaz on curiosity
+var getPhotosFhaz = function () {
+
+    // latest photos query by earth date
+    var apiUrl = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/latest_photos?api_key=" + apiKey + "&earth_date=" + todaysDate + "&camera=fhaz";
+
+    fetch(apiUrl)
+        .then(function(response) {
+            if (response.ok) {
+                response.json().then(function(photoInfo) {
+                    displayPhotoFhaz(photoInfo);
+                })
+            }
+        })
+}
+// NASA mars rover photo API, camera Navcam on curiosity
+var getPhotosNavcam = function () {
+
+    // latest photos query by earth date
+    var apiUrl = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/latest_photos?api_key=" + apiKey + "&earth_date=" + todaysDate + "&camera=navcam";
+
+    fetch(apiUrl)
+        .then(function(response) {
+            if (response.ok) {
+                response.json().then(function(photoInfo) {
+                    displayPhotoNavcam(photoInfo);
+                })
+            }
+        })
+}
+
+
+  var displayPhotoRhaz = function(photoInfo) {
+    marsRoverPicture.textContent = ""
+
+    // display info for single photo. TODO: determine how we want to loop or filter through arrays
+    var date = document.createElement("p");
+    date.classList.add("has-text-centered")
+    date.textContent = "Date photo was taken: " + photoInfo.latest_photos[0].earth_date;
+
+    var sol = document.createElement("p");
+    sol.classList.add("has-text-centered")
+    sol.textContent = "Sol date: " + photoInfo.latest_photos[0].sol;
+
+    var image = document.createElement("img");
+    image.classList.add("roverPicture")
+    image.src = photoInfo.latest_photos[0].img_src;
+
+    
+    marsRoverPicture.appendChild(date);
+    marsRoverPicture.appendChild(sol);
+    marsRoverPicture.appendChild(image);
+
+}
+
+var displayPhotoFhaz = function(photoInfo) {
+    marsRoverPicture.textContent = ""
+    
+    // display info for single photo. TODO: determine how we want to loop or filter through arrays
+   var date = document.createElement("p");
+    date.classList.add("has-text-centered")
+    date.textContent = "Date photo was taken: " + photoInfo.latest_photos[0].earth_date;
+
+    var sol = document.createElement("p");
+    sol.classList.add("has-text-centered")
+    sol.textContent = "Sol date: " + photoInfo.latest_photos[0].sol;
+
+    var image = document.createElement("img");
+    image.classList.add("roverPicture")
+    image.src = photoInfo.latest_photos[0].img_src;
+
+    marsRoverPicture.appendChild(date);
+    marsRoverPicture.appendChild(sol);
+    marsRoverPicture.appendChild(image);
+
+}
+
+var displayPhotoNavcam = function(photoInfo) {
+    marsRoverPicture.textContent = ""
+    
+    // display info for single photo. TODO: determine how we want to loop or filter through arrays
+    var date = document.createElement("p");
+    date.classList.add("has-text-centered")
+    date.textContent = "Date photo was taken: " + photoInfo.latest_photos[0].earth_date;
+
+    var sol = document.createElement("p");
+    sol.classList.add("has-text-centered")
+    sol.textContent = "Sol date: " + photoInfo.latest_photos[0].sol;
+
+    var image = document.createElement("img");
+    image.classList.add("roverPicture")
+    image.src = photoInfo.latest_photos[0].img_src;
+
+    
+
+    marsRoverPicture.appendChild(date);
+    marsRoverPicture.appendChild(sol);
+    marsRoverPicture.appendChild(image);
+
+}
+
 // ship array
 var shipObject = {
-    3: "star-destroyer", // starships/3/
-    9: "death-star", // starships/9/
-    10: "millennium-falcon", // starships/10/
-    11: "y-wing", // starships/11/
-    12: "x-wing", // starships/12/
-    17: "rebel-transport" // starships/17/
+    3: "star-destroyer",
+    9: "death-star", 
+    10: "millennium-falcon",
+    11: "y-wing",
+    12: "x-wing", 
+    17: "rebel-transport"
 }
 
 var verifyStarship = function (event) {
@@ -231,6 +358,12 @@ var loadSubmits = function() {
     
     localStorage.setItem("passengers", JSON.stringify(savedPassengers));
 }
+
+// event listener for mars rover buttons
+rhaz.addEventListener("click", getPhotosRhaz);
+fhaz.addEventListener("click", getPhotosFhaz);
+navcam.addEventListener("click", getPhotosNavcam);
+
 
 // event listener to starship buttons
 shipButtonEl.addEventListener("click", verifyStarship);

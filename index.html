@@ -19,6 +19,7 @@
             <div class="navbar-menu navbar-end">
                 <a class="navbar-item has-text-white" href="#rover">Rovers</a>
                 <a class="navbar-item has-text-white" href="#astronauts">Astronauts</a>
+                <a class="navbar-item has-text-white" href="#facts">Mars Facts</a>
                 <a class="navbar-item has-text-white" href="#star-wars">Star Wars Fun</a>
             </div>
         </nav>
@@ -29,7 +30,26 @@
         <!-- TODO Grace section -->
         <section class="container section" id="rover">
             <h2 class="block title is-3 has-text-centered">Explore the Landscape</h2>
-            <p>paragraph about rovers Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo deserunt nisi nesciunt harum ad molestiae ipsam voluptatibus? Dignissimos mollitia, culpa magni saepe eligendi sunt nulla, ducimus obcaecati labore distinctio provident.</p>
+            <p class="block">Mars is the home to five rovers. The names of these brave troopers are Sojourner, Spirit, Opportunity, Curiosity, and Perseverance.</p></br>
+            <p class="block">Spirit and Opportunity landed on Mars in 2004 in search for signs of past life, where they were dropped on opposite sides of the red planet. They make atmospheric observations and field geography. </p></br>
+            <p class="block">Curiosity started their journey in 2011 and has the same purpose as their rover colleagues. Curiosity's mission has been extended indefinitely, exploring the now familiar Mars.</p>
+
+            <div>
+                <p class="block">Curiosity Rover has 17 cameras! Click one of the camera buttons below to see a recent picture.</p>
+                
+                <div class="level">
+                <div class="level-item">
+                    <button  class="button roverButton is-danger" id="rhaz" type="button">RHAZ</button>
+                </div>
+                <div class="level-item">
+                    <button  class="button roverButton is-danger" id="fhaz" type="button">FHAZ</button>
+                </div>
+                <div class="level-item">
+                    <button  class="button roverButton is-danger" id="navcam" type="button">NAVCAM</button>
+                </div>
+            </div>
+
+            <div class="marsRoverPicture has-text-centered" id="marsRoverPicture"></div>
 
         </section>
 
@@ -55,6 +75,58 @@
          </section>
 
         <!-- TODO Kristin section -->
+
+        <!-- true/ false facts section -->
+        <section class="container section" id="facts">
+            <h2 class="block title is-3 has-text-centered">Test Your Knowledge of Mars</h2>
+            <!-- question one -->
+            <div class="block">
+                <div class="block subtitle is-5">
+                    <p>Mars is the fourth planet from the sun and the next planet beyond Earth. On average it is more than 142,000,000 miles from the sun.</p>
+                </div>
+                <div class="level-right block" id="fact-btn-one">
+                    <div class="level-item">
+                        <button type="submit" class="button is-danger" id="one-true">True</button>
+                    </div>
+                    <div class="level-item">
+                        <button type="submit" class="button is-danger" id="one-false">False</button>
+                    </div>
+                 </div>
+            </div>
+            <div class="block quiz-answer" id="display-one"></div>
+            <!-- question two -->
+            <div class="block">
+                <div class="block subtitle is-5">
+                    <p>Mars generally has a warm climate, with average temperatures well above 100 degrees Fahrenheit or 37 degrees Celsius.</p>
+                </div>
+                <div class="level-right block" id="fact-btn-two">
+                    <div class="level-item">
+                        <button type="submit" class="button is-danger" id="two-true">True</button>
+                    </div>
+                    <div class="level-item">
+                        <button type="submit" class="button is-danger" id="two-false">False</button>
+                    </div>
+                </div>
+            </div>
+            <div class="block quiz-answer" id="display-two"></div>
+            <!-- question three -->
+            <div class="block">
+                <div class="block subtitle is-5">
+                    <p>Unlike Earth, Mars does not currently have any moons in orbit around it.</p>
+                </div>
+                <div class="level-right block" id="fact-btn-three">
+                    <div class="level-item">
+                        <button type="submit" class="button is-danger" id="three-true">True</button>
+                    </div>
+                    <div class="level-item">
+                        <button type="submit" class="button is-danger" id="three-false">False</button>
+                    </div>
+                </div>
+            </div>
+            <div class="block quiz-answer" id="display-three"></div>
+        </section>
+
+        <!-- Star Wars section -->
         <section class="container section" id="star-wars">
             <h2 class="block title is-3 has-text-centered">Your Ride to the Next Planet</h2>
             
@@ -158,5 +230,6 @@
     <!-- moment cdn -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.js"></script>
     <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/script-facts.js"></script>
 </body>
 </html>
