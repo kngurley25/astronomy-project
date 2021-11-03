@@ -20,16 +20,16 @@ var getSpacePeople = function () {
         console.log(peopleInfo);
         peopleInSpace = peopleInfo.people;
         console.log(peopleInSpace);
-        displayNames();
+        displayNames(peopleInfo.number);
       });
     }
   });
 };
 
 // display number of people in space
-function displayNames() {
-  peopleSelectionEl.textContent = peopleInSpace[peopleInSpaceIndex].name;
-  craftSelectionEl.textContent = peopleInSpace[peopleInSpaceIndex].craft;
+function displayNames(length) {
+  peopleSelectionEl.textContent = peopleInSpace[peopleInSpaceIndex % length].name;
+  craftSelectionEl.textContent = peopleInSpace[peopleInSpaceIndex % length].craft;
   peopleInSpaceIndex++;
 }
 
