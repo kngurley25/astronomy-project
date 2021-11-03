@@ -4,19 +4,254 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <!-- Bulma CSS framework cdn -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <script src="https://kit.fontawesome.com/f0bd784ee5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+    <title>Welcome to Mars!</title>
 </head>
-<body>
-    <div id="photo-section">API TESTING FOR MARS ROVER PHOTO</div>
-    <div id="weather-section">API TESTING FOR WEATHER ON MARS</div>
-    <div id="earth-section">API TESTING FOR DAILY EARTH PHOTO</div>
-    <div id="people-section">API TESTING FOR NUMBER OF PEOPLE IN SPACE</div>
-    <div id="horoscope-section">API TESTING FOR HOROSCOPE</div>
 
+<body class="is-family-monospace">
+    <header class="hero is-large">
+        <nav class="navbar is-spaced is-transparent">
+            <div class="navbar-menu navbar-end">
+                <a class="navbar-item has-text-white" href="#rover">Rovers</a>
+                <a class="navbar-item has-text-white" href="#astronauts">Astronauts</a>
+                <a class="navbar-item has-text-white" href="#facts">Mars Facts</a>
+                <a class="navbar-item has-text-white" href="#star-wars">Star Wars Fun</a>
+            </div>
+        </nav>
+        <h1 class="title is-1 hero-body">Welcome to Mars!</h1>
+    </header>
 
+    <main>
+        <!-- TODO Grace section -->
+        <section class="container section" id="rover">
+            <h2 class="block title is-3 has-text-centered">Explore the Landscape</h2>
+            <p class="block">Mars is the home to five rovers. The names of these brave troopers are Sojourner, Spirit, Opportunity, Curiosity, and Perseverance.</p></br>
+            <p class="block">Spirit and Opportunity landed on Mars in 2004 in search for signs of past life, where they were dropped on opposite sides of the red planet. They make atmospheric observations and field geography. </p></br>
+            <p class="block">Curiosity started their journey in 2011 and has the same purpose as their rover colleagues. Curiosity's mission has been extended indefinitely, exploring the now familiar Mars.</p>
+
+            <div>
+                <p class="block">Curiosity Rover has 17 cameras! Click one of the camera buttons below to see a recent picture.</p>
+                
+                <div class="level">
+                <div class="level-item">
+                    <button  class="button roverButton is-danger" id="rhaz" type="button">RHAZ</button>
+                </div>
+                <div class="level-item">
+                    <button  class="button roverButton is-danger" id="fhaz" type="button">FHAZ</button>
+                </div>
+                <div class="level-item">
+                    <button  class="button roverButton is-danger" id="navcam" type="button">NAVCAM</button>
+                </div>
+            </div>
+
+            <div class="marsRoverPicture has-text-centered" id="marsRoverPicture"></div>
+
+        </section>
+
+        <!-- TODO Jeramy section -->
+        <section class="container section" id="astronauts">
+            <h2 class="block title is-3 has-text-centered">Who is in Space Right Now?</h2>
+
+            <!-- intro to people in space -->
+          <div class="block column">
+            <div class="block title is-5 has-text-centered">
+               <p>At any momement there could be numerous people in space. Click to see who is in space right now:</p>
+            </div>
+
+            <!-- button to activate people in space search -->
+          <div class="level block" id="who-in-space-button">
+            <div class="level-item">
+               <button type="submit" class="button is-danger" id="who-in-space-button">Who's In Space?</button>
+            </div>
+          </div>
+          
+          
+          <!-- container for people in space results -->
+          <div class="columns">
+            <div class="column card-container has-text-centered">
+              <p>Astronaut:</p>
+            <div class="card-container column card is-12 has-background-grey-lighter has-text-centered"><p id="person-in-space"></p></div>
+              <p>Space Craft:</p>
+            <div class="card-container column card is-12 has-background-grey-lighter has-text-centered"><p id="craft-in-space"></p></div>
+          </div>
+                   
+          <figure class="column img card-image media-right">
+            <img src="https://scienceline.org/wp-content/uploads/2007/03/astro.jpg">
+          </figure>
+          </div>
+            
+
+          <div class="level block" id="who-else-in-space-button">
+          <div class="level-item">
+            <button type="submit" class="button is-danger" id="who-else-in-space-button">Click on Who's in Space Button to See Who Else is in Space!</button>
+            </div> 
+           </div>
+          <div>    
+        
+        </section>
+
+        <!-- TODO Kristin section -->
+
+        <!-- true/ false facts section -->
+        <section class="container section" id="facts">
+            <h2 class="block title is-3 has-text-centered">Test Your Knowledge of Mars</h2>
+            <!-- question one -->
+            <div class="block">
+                <div class="block subtitle is-5">
+                    <p>Mars is the fourth planet from the sun and the next planet beyond Earth. On average it is more than 142,000,000 miles from the sun.</p>
+                </div>
+                <div class="level-right block" id="fact-btn-one">
+                    <div class="level-item">
+                        <button type="submit" class="button is-danger" id="one-true">True</button>
+                    </div>
+                    <div class="level-item">
+                        <button type="submit" class="button is-danger" id="one-false">False</button>
+                    </div>
+                 </div>
+            </div>
+            <div class="block quiz-answer" id="display-one"></div>
+            <!-- question two -->
+            <div class="block">
+                <div class="block subtitle is-5">
+                    <p>Mars generally has a warm climate, with average temperatures well above 100 degrees Fahrenheit or 37 degrees Celsius.</p>
+                </div>
+                <div class="level-right block" id="fact-btn-two">
+                    <div class="level-item">
+                        <button type="submit" class="button is-danger" id="two-true">True</button>
+                    </div>
+                    <div class="level-item">
+                        <button type="submit" class="button is-danger" id="two-false">False</button>
+                    </div>
+                </div>
+            </div>
+            <div class="block quiz-answer" id="display-two"></div>
+            <!-- question three -->
+            <div class="block">
+                <div class="block subtitle is-5">
+                    <p>Unlike Earth, Mars does not currently have any moons in orbit around it.</p>
+                </div>
+                <div class="level-right block" id="fact-btn-three">
+                    <div class="level-item">
+                        <button type="submit" class="button is-danger" id="three-true">True</button>
+                    </div>
+                    <div class="level-item">
+                        <button type="submit" class="button is-danger" id="three-false">False</button>
+                    </div>
+                </div>
+            </div>
+            <div class="block quiz-answer" id="display-three"></div>
+        </section>
+
+        <!-- Star Wars section -->
+        <section class="container section" id="star-wars">
+            <h2 class="block title is-3 has-text-centered">Your Ride to the Next Planet</h2>
+            
+            <!-- starships -->
+            <div class="block">
+                <div class="block subtitle is-5 has-text-centered">
+                    <p>Click to see information on available starships:</p>
+                </div>
+                <!-- starship buttons -->
+                <div class="level block" id="ship-buttons">
+                    <div class="level-item">
+                        <button type="submit" class="button is-danger" id="star-destroyer">Star Destroyer</button>
+                    </div>
+                    <div class="level-item">
+                        <button type="submit" class="button is-danger" id="death-star">Death Star</button>
+                    </div>
+                    <div class="level-item">
+                        <button type="submit" class="button is-danger" id="millennium-falcon">Millennium Falcon</button>
+                    </div>
+                    <div class="level-item">
+                        <button type="submit" class="button is-danger" id="y-wing">Y-Wing</button>
+                    </div>
+                    <div class="level-item">
+                        <button type="submit" class="button is-danger" id="x-wing">X-Wing</button>
+                    </div>
+                    <div class="level-item">
+                        <button type="submit" class="button is-danger" id="rebel-transport">Rebel Transport</button>
+                    </div>
+                </div>
+                <!-- starship information display -->
+                <div class="block card has-background-grey-lighter" id="starship-info"></div>
+            </div>
+
+            <!-- form elements -->
+            <div class="block">
+                <div class="subtitle is-5 has-text-centered">
+                    <p>Enter your name and select your starship:</p>
+                </div>
+                <!-- input fields-->
+                <div class="box starship-form">
+                    <div class="field">
+                        <label class="label">Name</label>
+                        <div>
+                            <input class="input" id="name-input" type="text" placeholder="e.g. Hans Solo"/>
+                        </div>  
+                    </div>
+                <!-- starship dropdown -->
+                    <div class="field">
+                        <label class="label">Starship</label>
+                        <div class="control has-icons-left">
+                        <div class="select">
+                            <select id="starship-dropdown">
+                            <option value="1">Star Destroyer</option>
+                            <option value="2">Death Star</option>
+                            <option value="3">Millennium Falcon</option>
+                            <option value="4">Y-Wing</option>
+                            <option value="5">X-Wing</option>
+                            <option value="6">Rebel Transport</option>
+                            </select>
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-rocket"></i>
+                            </span>
+                        </div>
+                        </div>
+                    </div>
+                
+                <!-- submit -->
+                    <div class="field">
+                        <div class="control">
+                            <button type="submit" class="button is-danger" id="submit-btn">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="block saved-passengers">
+                <!-- current passenger data -->
+                <div class="block card has-background-grey-lighter has-text-centered" id="name-starship"></div>
+                <!-- saved passengers display -->
+                <table class="table block has-background-grey-lighter" id="past-name-starship">
+                    <div id="table-heading"></div>
+                </table>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="footer-text">
+            <h4 class="has-text-weight-medium">Contributions:</h4>
+            <ul>
+                <li>NASA Open Innovation Team</li>
+                <li>Open Notify</li>
+                <li>SWAPI The Star Wars API</li>
+                <li>Scienceline.org</li>
+            </ul>
+            </div>
+        </footer>
+        
+    </main>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <!-- moment cdn -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.js"></script>
-    <!-- comment out below test script and add real script file here -->
-    <script src="./assets/js/test.js"></script>
+    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/script-facts.js"></script>
 </body>
 </html>
