@@ -69,21 +69,22 @@ var getPhotosNavcam = function () {
 
 
   var displayPhotoRhaz = function(photoInfo) {
-    
+    marsRoverPicture.textContent = ""
+
     // display info for single photo. TODO: determine how we want to loop or filter through arrays
-    var rhaz = document.createElement("p");
-    rhaz.textContent = "rovername = " + photoInfo.latest_photos[0].rover.name;
-    
     var date = document.createElement("p");
-    date.textContent = "date of photo = " + photoInfo.latest_photos[0].earth_date;
+    date.classList.add("has-text-centered")
+    date.textContent = "Date photo was taken: " + photoInfo.latest_photos[0].earth_date;
 
     var sol = document.createElement("p");
-    sol.textContent = "sol = " + photoInfo.latest_photos[0].sol;
+    sol.classList.add("has-text-centered")
+    sol.textContent = "Sol date: " + photoInfo.latest_photos[0].sol;
 
     var image = document.createElement("img");
+    image.classList.add("roverPicture")
     image.src = photoInfo.latest_photos[0].img_src;
 
-    marsRoverPicture.appendChild(rhaz);
+    
     marsRoverPicture.appendChild(date);
     marsRoverPicture.appendChild(sol);
     marsRoverPicture.appendChild(image);
@@ -91,21 +92,21 @@ var getPhotosNavcam = function () {
 }
 
 var displayPhotoFhaz = function(photoInfo) {
+    marsRoverPicture.textContent = ""
     
     // display info for single photo. TODO: determine how we want to loop or filter through arrays
-    var fhaz = document.createElement("p");
-    fhaz.textContent = "rovername = " + photoInfo.latest_photos[0].rover.name;
-    
-    var date = document.createElement("p");
-    date.textContent = "date of photo = " + photoInfo.latest_photos[0].earth_date;
+   var date = document.createElement("p");
+    date.classList.add("has-text-centered")
+    date.textContent = "Date photo was taken: " + photoInfo.latest_photos[0].earth_date;
 
     var sol = document.createElement("p");
-    sol.textContent = "sol = " + photoInfo.latest_photos[0].sol;
+    sol.classList.add("has-text-centered")
+    sol.textContent = "Sol date: " + photoInfo.latest_photos[0].sol;
 
     var image = document.createElement("img");
+    image.classList.add("roverPicture")
     image.src = photoInfo.latest_photos[0].img_src;
 
-    marsRoverPicture.appendChild(fhaz);
     marsRoverPicture.appendChild(date);
     marsRoverPicture.appendChild(sol);
     marsRoverPicture.appendChild(image);
@@ -113,21 +114,23 @@ var displayPhotoFhaz = function(photoInfo) {
 }
 
 var displayPhotoNavcam = function(photoInfo) {
+    marsRoverPicture.textContent = ""
     
     // display info for single photo. TODO: determine how we want to loop or filter through arrays
-    var navcam = document.createElement("p");
-    navcam.textContent = "rovername = " + photoInfo.latest_photos[0].rover.name;
-    
     var date = document.createElement("p");
-    date.textContent = "date of photo = " + photoInfo.latest_photos[0].earth_date;
+    date.classList.add("has-text-centered")
+    date.textContent = "Date photo was taken: " + photoInfo.latest_photos[0].earth_date;
 
     var sol = document.createElement("p");
-    sol.textContent = "sol = " + photoInfo.latest_photos[0].sol;
+    sol.classList.add("has-text-centered")
+    sol.textContent = "Sol date: " + photoInfo.latest_photos[0].sol;
 
     var image = document.createElement("img");
+    image.classList.add("roverPicture")
     image.src = photoInfo.latest_photos[0].img_src;
 
-    marsRoverPicture.appendChild(navcam);
+    
+
     marsRoverPicture.appendChild(date);
     marsRoverPicture.appendChild(sol);
     marsRoverPicture.appendChild(image);
@@ -314,9 +317,9 @@ var loadSubmits = function() {
 }
 
 // event listener for mars rover buttons
-rhaz.addEventListener("click", getPhotosRhaz());
-fhaz.addEventListener("click", getPhotosFhaz());
-navcam.addEventListener("click", getPhotosNavcam());
+rhaz.addEventListener("click", getPhotosRhaz);
+fhaz.addEventListener("click", getPhotosFhaz);
+navcam.addEventListener("click", getPhotosNavcam);
 
 
 // event listener to starship buttons

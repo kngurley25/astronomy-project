@@ -48,6 +48,15 @@ header {
 /* mars rover button css */
 .roverButton {
     width: 150px;
+    font-family: monospace;
+}
+/* mars picture sizing */
+.roverPicture {
+    max-width: 40%;
+    max-height: 40%;
+    border: solid 3px;
+    border-color: var(--secondary-color);
+    margin: auto;
 }
 
 /* starship information card style */
