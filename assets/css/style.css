@@ -120,6 +120,10 @@ header {
     .starship-form {
         max-width: 70%;
     }
+    #astronaut-img {
+        display: flex;
+        margin: auto;
+    }
 }
 
 @media screen and (max-width: 580px)    {
@@ -129,5 +133,12 @@ header {
     .quiz-answer img {
         max-width: 80%;
         max-height: 80%;
+    }
+    .roverPicture {
+        max-width: 80%;
+        max-height: 80%;
+    }
+    #who-else-in-space-button {
+        display: none;
     }
 }
